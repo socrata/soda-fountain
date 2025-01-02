@@ -791,6 +791,7 @@ class DatasetDAOImpl(dc: DataCoordinatorClient,
             CollocateDone(res, { datasetId => store.bulkDatasetLookup(Set(datasetId)).headOption })
           case DataCoordinatorClient.InstanceNotExistResult(e) => GenericCollocateError(e)
           case DataCoordinatorClient.StoreGroupNotExistResult(e) => GenericCollocateError(e)
+          case DataCoordinatorClient.StoreDoesNotSupportCollocationResult(e) => GenericCollocateError(e)
           case DataCoordinatorClient.StoreNotExistResult(e) => GenericCollocateError(e)
           case DataCoordinatorClient.DatasetNotExistResult(e) => GenericCollocateError(e.underlying)
           case DataCoordinatorClient.CollocationLockTimeoutResult() => CollocationLockTimeoutError()

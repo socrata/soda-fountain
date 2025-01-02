@@ -197,6 +197,9 @@ case class DatasetNotInSecondary(secondary: String) extends DCUpdateError
 @Tag("collocation.instance.does-not-exist")
 case class InstanceNotExist(instance: String) extends DCUpdateError
 
+@Tag("collocation.secondary.store-does-not-support-collocation")
+case class StoreDoesNotSupportCollocation(storeGroup: String) extends DCUpdateError
+
 @Tag("collocation.secondary.store-group-does-not-exist")
 case class StoreGroupNotExist(storeGroup: String) extends DCUpdateError
 

@@ -759,6 +759,7 @@ abstract class HttpDataCoordinatorClient extends DataCoordinatorClient {
             //NOTE: These are duplicated in sendScript, is there any way to prevent this?
             case Some(InstanceNotExist(instance)) => InstanceNotExistResult(instance)
             case Some(StoreGroupNotExist(storeGroup)) => StoreGroupNotExistResult(storeGroup)
+            case Some(StoreDoesNotSupportCollocation(storeGroup)) => StoreDoesNotSupportCollocationResult(storeGroup)
             case Some(StoreNotExist(store)) => StoreNotExistResult(store)
             case Some(DatasetNotExist(dataset)) => DatasetNotExistResult(dataset)
             case Some(CollocationLockTimeout()) => CollocationLockTimeoutResult()

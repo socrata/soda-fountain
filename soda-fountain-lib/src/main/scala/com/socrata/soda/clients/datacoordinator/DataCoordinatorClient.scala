@@ -227,6 +227,7 @@ object DataCoordinatorClient {
   // FAIL CASES: Collocation
   case class InstanceNotExistResult(instance: String) extends FailResult
   case class StoreGroupNotExistResult(storeGroup: String) extends FailResult
+  case class StoreDoesNotSupportCollocationResult(storeGroup: String) extends FailResult
   case class StoreNotExistResult(store: String) extends FailResult
   case class DatasetNotExistResult(dataset: DatasetInternalName) extends FailResult
   case class CollocationLockTimeoutResult() extends FailResult
